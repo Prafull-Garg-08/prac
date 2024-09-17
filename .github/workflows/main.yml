@@ -26,11 +26,17 @@ jobs:
             - name: listing all
               shell: bash
               run: ls -a
+            
+            - name: pwd
+              run: pwd
+            - name: List files
+              run: ls -la /home/runner/work/prac/prac
 
             - name: 'Resolve Project Dependencies Using Npm'
               shell: bash
               run: |
                 pushd './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}'
+                ls -la
                 npm install
                 npm run build --if-present
                 npm run test --if-present
