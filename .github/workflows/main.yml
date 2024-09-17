@@ -8,9 +8,9 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: checkout explore
-              uses: actions@checkout@v4
+              uses: actions/checkout@v4
               with:
-                path: .
+                  path: .
               
             - name: listing
               shell: bash
