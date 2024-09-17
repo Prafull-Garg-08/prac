@@ -9,6 +9,8 @@ jobs:
         steps:
             - name: checkout explore
               uses: actions@checkout@v4
+              with:
+                path: .
               
             - name: listing
               shell: bash
