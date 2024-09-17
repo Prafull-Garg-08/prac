@@ -4,7 +4,7 @@ on:
     workflow_dispatch:
 
 env: 
-    AZURE_FUNCTIONAPP_PACKAGE_PATH: .
+    AZURE_FUNCTIONAPP_PACKAGE_PATH: /
 
 jobs:
     check:
@@ -13,7 +13,7 @@ jobs:
             - name: checkout explore
               uses: actions/checkout@v4
               with:
-                  path: .
+                  path: /
               
             - name: listing
               shell: bash
