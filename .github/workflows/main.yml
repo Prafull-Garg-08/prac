@@ -1,0 +1,23 @@
+name: Checking current directory Path
+
+on:
+    workflow_dispatch:
+
+jobs:
+    check:
+        runs-on: ubuntu-latest
+        steps:
+            - name: checkout explore
+              uses: actions@checkout@v4
+              
+            - name: listing
+              shell: bash
+              run: ls
+            
+            - name: listing long
+              shell: bash
+              run: ls -l
+            
+            - name: listing all
+              shell: bash
+              run: ls -a
