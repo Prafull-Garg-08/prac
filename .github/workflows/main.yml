@@ -3,6 +3,9 @@ name: Checking current directory Path
 on:
     workflow_dispatch:
 
+env: 
+    AZURE_FUNCTIONAPP_PACKAGE_PATH: .
+
 jobs:
     check:
         runs-on: ubuntu-latest
@@ -23,3 +26,12 @@ jobs:
             - name: listing all
               shell: bash
               run: ls -a
+
+            - name: 'Resolve Project Dependencies Using Npm'
+              shell: bash
+              run: |
+                pushd './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}'
+                npm install
+                npm run build --if-present
+                npm run test --if-present
+                popd
